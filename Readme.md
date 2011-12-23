@@ -6,7 +6,7 @@ Slow(ish) and compact instead of fast and spacey.
 
 ## Example of compact code?
 
-Here is the solution to the first assignment.
+Here is my solution to the first assignment.
 
 ``` ruby
 (0...1000).select {|n| [3, 5].map{|i| n % i}.any?(&:zero?)}.inject(:+)
