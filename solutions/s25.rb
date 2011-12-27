@@ -6,5 +6,5 @@ def fib(a,b, count = 1)
   end
 end
 
-puts fib(1,2)
-# => 4781
+puts fib(1,1)
+# => 4782
