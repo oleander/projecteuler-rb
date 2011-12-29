@@ -2,6 +2,15 @@ def divisors(n)
   (1..n/2).select{|i| (n % i) == 0}
 end
 
-puts (1..10_000).inject(0){|res, n| res + (divisors(n).inject(:+) || 0)}
+sum = 0
+(1..10_000).each do |n|
+  a = divisors(n).inject(:+) || 0
+  b = divisors(a).inject(:+) || 0
+  if b == n and a != n
+    sum += a
+  end
+end
 
-# => 32251014
+puts sum
+
+# => 31626
