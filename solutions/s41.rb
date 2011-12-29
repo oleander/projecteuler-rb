@@ -2,12 +2,7 @@ def is_prime?(n)
   return false if n.even?
   return false if n == 1
   return true if n == 2
-  
-  if n > 10
-    (2..10).to_a.each {|i| return false if (n % i).zero? }
-  end
-  
-  !! (11..(n-1)).to_a.each {|i| return false if (n % i).zero? }
+  !! (2..(n-1)).each {|i| return false if (n % i).zero?}
 end
 
 found = 0
