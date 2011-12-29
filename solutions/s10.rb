@@ -1,20 +1,12 @@
 def is_prime?(n)
-  !! (2..(n-1)).to_a.each {|i| return false if (n % i).zero? }
+  return false if n.even?
+  return false if n < 2
+  return true if n == 2
+  !! (2..(n-1)).each {|i| return false if (n % i).zero?}
 end
 
-n = 3
-sum = 1
-loop do
-  break if n > 2_000_000
-  if is_prime?(n)
-    sum += n
-  end
-    
-  if n % 10_001 == 0
-    puts "n=#{n}"
-  end
-  
-  n += 2  
-end
-
-puts sum
+puts (0..2_000_000).inject(0) {|res, n| res + (is_prime?(n) ? n : 0)}
+# => 142913828920
+# real 402m11.564s
+# user 379m26.622s
+# sys 1m8.815s
